@@ -5,7 +5,7 @@ async function getData() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/home`, { method: 'POST' });
 
   if (!res.ok) {
-    return null
+    return { body: { page: null } }
   }
 
   return res.json()
