@@ -41,3 +41,22 @@
   margin: 8px;
   border-radius: 8px;
 }
+
+.list {
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+  width: 100%;
+  color: #333;
+  padding: 16px;
+}
+
+.list .item {
+  display: flex;
+  height: 80px;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 8px;
+  margin: 8px;
+  border-radius: 8px;
+}

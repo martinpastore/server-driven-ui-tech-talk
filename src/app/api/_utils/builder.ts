@@ -15,7 +15,7 @@ export class Builder {
                 background: config.theme[0],
             },
             alert,
-            carousel: {
+            [config.layout]: {
                 items: config.products,
             },
         }

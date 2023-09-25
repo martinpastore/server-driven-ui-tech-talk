@@ -23,3 +23,13 @@ export type CarouselComponent = {
         }[]
     }
 }
+
+export type ListComponent = {
+    list: {
+        items: {
+            title: string;
+            image: string;
+            size: 'sm' | 'md' | 'lg'
+        }[]
+    }
+}

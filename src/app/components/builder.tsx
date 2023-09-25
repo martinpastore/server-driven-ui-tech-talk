@@ -1,5 +1,5 @@
 import styles from '../page.module.css'
-import { AlertComponent, CarouselComponent, NavbarComponent } from '../types/components'
+import { AlertComponent, CarouselComponent, ListComponent, NavbarComponent } from '../types/components'
 
 const sizeCards = {
     sm: {
@@ -45,8 +45,17 @@ const Alert = ({ page }: {page: AlertComponent}) => {
 
 const Carousel = ({ page }: { page: CarouselComponent }) => {
     return <div className={styles.carousel}>
-        {page.carousel.items.map(item => <div className={styles.item} style={{ ...sizeCards[item.size] }} key={item.title}>
+        {page.carousel.items.map(item => <div style={{ ...sizeCards[item.size] }} className={styles.item} key={item.title}>
             {item.image ? <img style={{ ...sizeCards[item.size].imageSize }} src={item.image} /> : null}
+            {<h4>{item.title}</h4>}
+        </div>)}
+    </div>
+}
+
+const List = ({ page }: { page: ListComponent }) => {
+    return <div className={styles.list}>
+        {page.list.items.map(item => <div className={styles.item} key={item.title}>
+            {item.image ? <img width="50px" height="70px" src={item.image} /> : null}
             {<h4>{item.title}</h4>}
         </div>)}
     </div>
@@ -57,6 +66,7 @@ const Builder = ({ component, page }: { component: string, page: unknown }) => {
         ['navbar', Navbar],
         ['alert', Alert],
         ['carousel', Carousel],
+        ['list', List],
     ])
     
     const Component = mapComponent.get(component)!;
