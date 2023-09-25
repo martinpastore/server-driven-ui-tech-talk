@@ -2,7 +2,7 @@
     "functions": {
         "app/api/home/route.ts": {
             "memory": 1024,
-            "maxDuration": 30
+            "maxDuration": 10
         }
     }
 }
