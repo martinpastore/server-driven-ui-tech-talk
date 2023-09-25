@@ -1,7 +1,7 @@
 import Builder from './components/builder';
 import styles from './page.module.css'
 
-export async function getData() {
+async function getData() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/home`, { method: 'POST' });
 
   if (!res.ok) {
